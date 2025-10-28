@@ -1,0 +1,401 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.BrashExploitDemo-layerWhite {
+    width: 780px;
+    padding: 24px 34px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.BrashExploitDemo-layerContent {
+    padding: 36px;
+    background-color: #000;
+    border-radius: 30px;
+    width: 100%;
+    color: #FE3014;
+    box-shadow: 0 0 30px rgba(254, 48, 20, 0.15), inset 0 0 20px rgba(254, 48, 20, 0.05), 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+.BrashExploitDemo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.BrashExploitDemo-headerLeft {
+    text-align: left;
+}
+.BrashExploitDemo-logo {
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(to right bottom, #FE3014 25%, rgba(254, 48, 20, 0.4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2px;
+}
+.BrashExploitDemo-subtitle {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.BrashExploitDemo-githubLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.BrashExploitDemo-githubLink:hover {
+    background: rgba(254, 48, 20, 0.1);
+    border-color: rgba(254, 48, 20, 0.3);
+}
+.BrashExploitDemo-githubLink:active {
+    background: rgba(254, 48, 20, 0.05);
+}
+.BrashExploitDemo-githubLink svg {
+    width: 20px;
+    height: 20px;
+    fill: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.BrashExploitDemo-githubLink:hover svg {
+    fill: rgba(254, 48, 20, 0.8);
+}
+.BrashExploitDemo-statusBar {
+    background: linear-gradient(135deg, rgba(254, 48, 20, 0.06) 0%, rgba(0, 0, 0, 0.4) 100%);
+    border: 1px solid rgba(254, 48, 20, 0.3);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 0 15px rgba(254, 48, 20, 0.15), inset 0 0 10px rgba(254, 48, 20, 0.05);
+}
+.BrashExploitDemo-statusRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.BrashExploitDemo-statusRow:last-child {
+    margin-bottom: 0;
+}
+.BrashExploitDemo-statusLabel {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.BrashExploitDemo-statusValue {
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: #FE3014;
+    text-shadow: 0 0 10px rgba(254, 48, 20, 0.4);
+}
+.BrashExploitDemo-statusValue.active {
+    animation: BrashExploitDemo-pulse 2s ease-in-out infinite;
+}
+@keyframes BrashExploitDemo-pulse {
+    0%, 100% {
+        opacity: 1;
+   }
+    50% {
+        opacity: 0.6;
+   }
+}
+.BrashExploitDemo-controlsSection {
+    margin-bottom: 14px;
+}
+.BrashExploitDemo-sectionTitle {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(254, 48, 20, 0.15);
+}
+.BrashExploitDemo-controlGroup {
+    margin-bottom: 12px;
+}
+.BrashExploitDemo-controlLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.BrashExploitDemo-controlLabelText {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.BrashExploitDemo-controlLabelValue {
+    font-family: monospace;
+    font-size: 11px;
+    color: #FE3014;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(254, 48, 20, 0.3);
+}
+.BrashExploitDemo-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.BrashExploitDemo-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FE3014;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(254, 48, 20, 0.5);
+    transition: all 0.2s ease;
+}
+.BrashExploitDemo-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(254, 48, 20, 0.8);
+}
+.BrashExploitDemo-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FE3014;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(254, 48, 20, 0.5);
+    transition: all 0.2s ease;
+}
+.BrashExploitDemo-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(254, 48, 20, 0.8);
+}
+.BrashExploitDemo-presets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+}
+.BrashExploitDemo-presetBtn {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(254, 48, 20, 0.25);
+    border-radius: 10px;
+    padding: 14px 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: center;
+}
+.BrashExploitDemo-presetBtn:hover {
+    background: rgba(254, 48, 20, 0.08);
+    border-color: rgba(254, 48, 20, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(254, 48, 20, 0.2);
+}
+.BrashExploitDemo-presetBtn:active {
+    background: rgba(254, 48, 20, 0.12);
+}
+.BrashExploitDemo-presetBtn.active {
+    background: rgba(254, 48, 20, 0.15);
+    border-color: #FE3014;
+    box-shadow: 0 0 20px rgba(254, 48, 20, 0.3), inset 0 0 10px rgba(254, 48, 20, 0.1);
+}
+.BrashExploitDemo-presetName {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FE3014;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(254, 48, 20, 0.3);
+}
+.BrashExploitDemo-presetDesc {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.BrashExploitDemo-presetStats {
+    font-family: monospace;
+    font-size: 10px;
+    color: rgba(254, 48, 20, 0.6);
+    margin-top: 4px;
+    font-weight: 600;
+}
+.BrashExploitDemo-actionButtons {
+    display: flex;
+    gap: 8px;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}
+.BrashExploitDemo-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+.BrashExploitDemo-btnStart {
+    background: linear-gradient(135deg, #FE3014 0%, #c92510 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(254, 48, 20, 0.3);
+    border: 1px solid rgba(254, 48, 20, 0.5);
+}
+.BrashExploitDemo-btnStart:hover:not(:disabled) {
+    box-shadow: 0 6px 18px rgba(254, 48, 20, 0.5);
+}
+.BrashExploitDemo-btnStart:active:not(:disabled) {
+    box-shadow: 0 2px 8px rgba(254, 48, 20, 0.4);
+}
+.BrashExploitDemo-btnStart:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.BrashExploitDemo-btnStop {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.BrashExploitDemo-btnStop:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+}
+.BrashExploitDemo-btnStop:active:not(:disabled) {
+    transform: translateY(0);
+    background: rgba(0, 0, 0, 0.08);
+}
+.BrashExploitDemo-btnStop:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.BrashExploitDemo-warning {
+    background: linear-gradient(135deg, rgba(254, 48, 20, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
+    border: 1px solid rgba(254, 48, 20, 0.2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 14px;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(254, 48, 20, 0.03);
+}
+.BrashExploitDemo-warningText {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.BrashExploitDemo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    position: relative;
+    margin-top: 24px;
+    padding-top: 20px;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.BrashExploitDemo-footerText {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.BrashExploitDemo-footerLink {
+    color: rgba(0, 0, 0, 0.7);
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.BrashExploitDemo-footerLink:hover {
+    color: rgba(254, 48, 20, 0.8);
+}
+.BrashExploitDemo-footerLink:active {
+    color: #FE3014;
+}
+@media (max-width: 768px) {
+    .BrashExploitDemo-layerWhite {
+        width: 95vw;
+        padding: 20px;
+   }
+    .BrashExploitDemo-header {
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+   }
+    .BrashExploitDemo-layerContent {
+        padding: 20px 24px;
+   }
+    .BrashExploitDemo-logo {
+        font-size: 24px;
+   }
+    .BrashExploitDemo-subtitle {
+        font-size: 9px;
+   }
+    .BrashExploitDemo-presets {
+        grid-template-columns: 1fr;
+   }
+    .BrashExploitDemo-actionButtons {
+        flex-direction: column-reverse;
+        margin-top: 16px;
+   }
+    .BrashExploitDemo-warning {
+        margin-top: 12px;
+   }
+    .BrashExploitDemo-footer {
+        flex-wrap: wrap;
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 16px;
+   }
+    .BrashExploitDemo-githubLink {
+        width: 32px;
+        height: 32px;
+   }
+    .BrashExploitDemo-githubLink svg {
+        width: 18px;
+        height: 18px;
+   }
+}

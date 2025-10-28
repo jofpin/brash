@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Brash: Exploit Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="apple-mobile-web-app-title" content="Brash Demo">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FE3014" />
+    <meta name="google" value="notranslate"/>
+    <meta name="author" content="Jose Pino, @jofpin"/>
+    <meta name="description" content="Exploit demo of Brash - Chromium Browser DoS Attack with real-time controls."/>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="BrashExploitDemo-layerWhite">
+        <div class="BrashExploitDemo-header">
+            <div class="BrashExploitDemo-headerLeft">
+                <div class="BrashExploitDemo-logo">BRASH</div>
+                <div class="BrashExploitDemo-subtitle">Interactive Exploit Demo</div>
+            </div>
+            <a href="https://github.com/jofpin/brash" target="_blank" rel="noopener noreferrer" class="BrashExploitDemo-githubLink">
+                <svg enable-background="new -1163 1657.697 56.693 56.693" viewBox="-1163 1657.697 56.693 56.693" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" d="M-1134.6598,1662.9163c-13.601,0-24.63,11.0267-24.63,24.6299c0,10.8821,7.0573,20.1144,16.8435,23.3713c1.2308,0.2279,1.6829-0.5345,1.6829-1.1849c0-0.587-0.0227-2.5276-0.0334-4.5857c-6.8521,1.4901-8.2979-2.906-8.2979-2.906c-1.1205-2.8467-2.7347-3.6039-2.7347-3.6039c-2.2349-1.5287,0.1685-1.4972,0.1685-1.4972c2.473,0.1737,3.7755,2.5385,3.7755,2.5385c2.1967,3.7651,5.7618,2.6765,7.1675,2.0472c0.2211-1.5917,0.8591-2.6786,1.5637-3.2936c-5.4707-0.6226-11.2218-2.7347-11.2218-12.1722c0-2.6888,0.9623-4.8861,2.538-6.611c-0.2557-0.6206-1.0989-3.1255,0.2386-6.5183c0,0,2.0684-0.6616,6.7747,2.525c1.9648-0.5458,4.0719-0.8195,6.165-0.829c2.093,0.0095,4.2017,0.2832,6.17,0.829c4.7012-3.1866,6.7665-2.525,6.7665-2.525c1.3406,3.3928,0.4974,5.8977,0.2417,6.5183c1.5793,1.7249,2.5348,3.9221,2.5348,6.611c0,9.4602-5.7618,11.5428-11.2465,12.1527c0.8834,0.7644,1.6704,2.2632,1.6704,4.561c0,3.2955-0.0282,5.9479-0.0282,6.7592c0,0.6556,0.4432,1.4236,1.6915,1.1818c9.7812-3.2605,16.8296-12.4896,16.8296-23.3682C-1110.0299,1673.943-1121.0574,1662.9163-1134.6598,1662.9163z" fill-rule="evenodd"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="BrashExploitDemo-layerContent">
+        <div class="BrashExploitDemo-statusBar">
+            <div class="BrashExploitDemo-statusRow">
+                <span class="BrashExploitDemo-statusLabel">Status</span>
+                <span class="BrashExploitDemo-statusValue" id="status">Idle</span>
+            </div>
+            <div class="BrashExploitDemo-statusRow">
+                <span class="BrashExploitDemo-statusLabel">Updates/Second</span>
+                <span class="BrashExploitDemo-statusValue" id="updatesPerSec">0</span>
+            </div>
+            <div class="BrashExploitDemo-statusRow">
+                <span class="BrashExploitDemo-statusLabel">Total Updates</span>
+                <span class="BrashExploitDemo-statusValue" id="totalUpdates">0</span>
+            </div>
+        </div>
+
+        <div class="BrashExploitDemo-controlsSection">
+            <div class="BrashExploitDemo-sectionTitle">Attack Parameters</div>
+            
+            <div class="BrashExploitDemo-controlGroup">
+                <div class="BrashExploitDemo-controlLabel">
+                    <span class="BrashExploitDemo-controlLabelText">Burst Size</span>
+                    <span class="BrashExploitDemo-controlLabelValue" id="burstValue">200</span>
+                </div>
+                <input type="range" min="100" max="10000" value="200" step="100" class="BrashExploitDemo-slider" id="burstSlider">
+            </div>
+
+            <div class="BrashExploitDemo-controlGroup">
+                <div class="BrashExploitDemo-controlLabel">
+                    <span class="BrashExploitDemo-controlLabelText">Interval (ms)</span>
+                    <span class="BrashExploitDemo-controlLabelValue" id="intervalValue">1000</span>
+                </div>
+                <input type="range" min="1" max="1000" value="1000" step="1" class="BrashExploitDemo-slider" id="intervalSlider">
+            </div>
+        </div>
+
+        <div class="BrashExploitDemo-controlsSection">
+            <div class="BrashExploitDemo-sectionTitle">Presets</div>
+            <div class="BrashExploitDemo-presets">
+                <button class="BrashExploitDemo-presetBtn active" data-preset="moderate">
+                    <div class="BrashExploitDemo-presetName">Moderate</div>
+                    <div class="BrashExploitDemo-presetDesc">Controlled observation</div>
+                    <div class="BrashExploitDemo-presetStats">~600 updates/sec</div>
+                </button>
+                <button class="BrashExploitDemo-presetBtn" data-preset="aggressive">
+                    <div class="BrashExploitDemo-presetName">Aggressive</div>
+                    <div class="BrashExploitDemo-presetDesc">Fast saturation</div>
+                    <div class="BrashExploitDemo-presetStats">~60K updates/sec</div>
+                </button>
+                <button class="BrashExploitDemo-presetBtn" data-preset="extreme">
+                    <div class="BrashExploitDemo-presetName">Extreme</div>
+                    <div class="BrashExploitDemo-presetDesc">Instant collapse</div>
+                    <div class="BrashExploitDemo-presetStats">~24M updates/sec</div>
+                </button>
+            </div>
+        </div>
+        </div>
+
+        <div class="BrashExploitDemo-actionButtons">
+            <button class="BrashExploitDemo-btn BrashExploitDemo-btnStart" id="startBtn">Start Attack</button>
+            <button class="BrashExploitDemo-btn BrashExploitDemo-btnStop" id="stopBtn" disabled>Stop Attack</button>
+        </div>
+
+        <div class="BrashExploitDemo-warning">
+            <div class="BrashExploitDemo-warningText">
+                This demo will freeze and potentially crash your browser. Save your work before proceeding.
+            </div>
+        </div>
+
+        <div class="BrashExploitDemo-footer">
+            <span class="BrashExploitDemo-footerText">© 2025 CREATED BY</span>
+            <a class="BrashExploitDemo-footerLink" href="https://x.com/jofpin" target="_blank" rel="noopener noreferrer">JOSE PINO</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Brash from CDN (main branch) -->
+    <script src="https://cdn.jsdelivr.net/gh/jofpin/brash/brash.js"></script>
+    <script src="assets/js/exploit-demo.js"></script>
+</body>
+</html>
